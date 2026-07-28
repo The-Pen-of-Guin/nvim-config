@@ -14,11 +14,11 @@ require('tokyonight').setup {
   },
 }
 
--- Load the colorscheme here.
--- Like many other themes, this one has different styles, and you could load
--- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-vim.cmd.colorscheme 'tokyonight-night'
+vim.pack.add({
+  "https://github.com/ellisonleao/gruvbox.nvim"
+})
+require("gruvbox").setup()
 
--- Set background to transparent
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- Load the colorscheme here.
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox]])
