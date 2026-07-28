@@ -26,7 +26,6 @@ vim.o.undofile = true
 
 -- Case-insensitive searching unless \C or one or more capital letters in the search term
 vim.o.ignorecase = true
-vim.o.ignorecase = true
 
 -- Keep signcolumn on by default
 vim.o.signcolumn = 'yes'
