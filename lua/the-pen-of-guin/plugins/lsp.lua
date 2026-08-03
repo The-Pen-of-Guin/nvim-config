@@ -108,7 +108,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 ---@type table<string, vim.lsp.Config>
 local servers = {
   rust_analyzer = {},
-  jdtls = {},
+  jdtls = {
+    init_options = {
+      extendedClientCapabilities = {
+        classFileContentsSupport = true,
+      },
+    },
+  },
   gradle_ls = {},
   ts_ls = {},
   markdown_oxide = {},
@@ -188,3 +194,7 @@ for name, server in pairs(servers) do
   vim.lsp.config(name, server)
   vim.lsp.enable(name)
 end
+
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})

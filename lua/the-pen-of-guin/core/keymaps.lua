@@ -73,3 +73,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function() vim.hl.on_yank() end,
 })
+
+-- Spellchecker highlighting
+vim.keymap.set('n', '<leader>ts', function()
+  vim.opt.spell = not vim.opt.spell:get()
+  print("Spell Check: " .. tostring(vim.opt.spell:get()))
+end, { desc = 'Toggle spellchecker highlighting' })

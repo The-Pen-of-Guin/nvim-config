@@ -57,3 +57,15 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+-- Disable swapfiles because they cause annoying warnings, don't play nice with
+-- read only jar files, and are unnecessary if you use Git or other forms of
+-- backups.
+vim.opt.swapfile = false
+
+-- Setup spell checker (toggle keymapping found in the-pen-of-guin/core/keymaps.lua)
+vim.opt.spelllang = { 'en' }
+-- Spellchecker Highlighting
+vim.api.nvim_set_hl(0, "SpellBad", { sp = "red", undercurl = true })
+vim.api.nvim_set_hl(0, "SpellCap", { sp = "yellow", undercurl = true })
+
